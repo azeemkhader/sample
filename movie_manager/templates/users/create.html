@@ -1,0 +1,29 @@
+{% extends 'blank.html' %}
+{% block content  %}
+
+<h1>SIGNUP</h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p><label for="">USERNAME:</label> <input type="text" name="username"></p>
+    <p><label for="">PASSWORD:</label><input type="password" name="password" id=""></p>
+
+    <button type="submit">Signup</button>
+
+    {% if user %}
+    <h2 style="color: green;">USER {{user.username}} CREATED</h2>
+    {% endif %}
+
+    
+    {% if error_message %}
+    <h2 style="color: red;">USER {{user.username}} ALREADY EXITS</h2>
+    {% endif %}
+   
+   
+    
+    
+
+</form>
+{% endblock %}

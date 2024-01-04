@@ -1,0 +1,41 @@
+
+{% extends 'blank.html' %}
+{% load static %}
+
+{% block content%}
+{% for obj in recent_visits %}
+<p>{{obj.title}}</p>
+{% endfor %}
+
+
+
+<h1>LIST MOVIES {{ visits }} </h1>
+
+
+<table>
+    <tr><th>Title</th><th>Year</th><th>Description</th><th>IMAGES</th><th>edit/delete</th></tr>
+{% for obj in movies %}
+
+<tr>
+    <td>{{obj.title|upper}} </td>
+       
+    
+    <td><h2 style="font-size: 20px;"> <b>{{obj.year}}</b></h2></td>
+    <td><h2>{{obj.description | upper}}</h2></td>
+    <td> {% if obj.poster %}
+        <img width="150" height="250" src="{{obj.poster.url}}" alt="">
+        {% endif %}
+    </td>
+    <td><a href="{% url 'edit' obj.id %}">edit</a>/<a href="{% url 'delete' obj.id %}">delete</a></td>
+
+
+</tr>
+
+
+
+{% endfor %}
+</table>
+
+
+{% endblock %}
+

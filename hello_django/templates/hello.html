@@ -1,0 +1,13 @@
+{% for obj in movies %}
+
+<h1>Title:{{obj.title|upper}}</h1>
+<p style="font-size: 25px;"> <b>Year:{{obj.year}}</b></p>
+<h2>Summary:{{obj.summary|lower}}</h2>
+
+
+{% if obj.success %}
+<p style="color: green;">Movie Was A Success</p>
+{% else %}
+<p style="color: red;">Movie Was a Failure</p>
+{% endif %}
+{% endfor %}

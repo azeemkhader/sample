@@ -1,0 +1,23 @@
+<h1>LOGIN</h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p><label for="">USERNAME:</label> <input type="text" name="username"></p>
+    <p><label for="">PASSWORD:</label><input type="password" name="password" id=""></p>
+
+    <button type="submit">LOGIN</button>
+
+    
+    
+    {% if error_message %}
+    <h2 > USER NOT FOUND <a href="{% url 'signup'  %}">SIGNUP??</a> </h2>
+    {% endif %}
+   
+   
+    
+    
+
+</form>
+
